@@ -1,4 +1,6 @@
 from configparser import ConfigParser
+from typing import Tuple
+from typing import Union
 
 import sqlalchemy as sa
 from sqlalchemy import create_engine
@@ -30,11 +32,19 @@ def create_wos_engine(echo: bool = False) -> sa.engine.base.Engine:
     return create_engine(
         f"oracle+cx_oracle://{user}:{password}@{host}:{port}/?service_name={service_name}",
         echo=echo,
-        execution_options={"schema_translate_map": {"per_user": schema}},
+        execution_options={"schema_translate_map": {None: schema}},
     )
 
 
-def create_wos_session(echo=False, sessionmaker=False):
+def create_wos_session(
+    echo: bool = False,
+    sessionmaker: bool = False,
+) -> Tuple[sa.engine.base.Engine, Union[sa.orm.session.Session, sa.orm.session.sessionmaker]]:
+    """creates an enginer and a session for fizDB
+
+    returns a tuple where the first element is always the engine and the second element is
+    either a Session or a sessionmaker object
+    """
     engine = create_wos_engine(echo=echo)
     Session = orm.sessionmaker(bind=engine)
     if sessionmaker:
