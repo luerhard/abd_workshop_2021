@@ -2,6 +2,7 @@
 from sqlalchemy import Column
 from sqlalchemy import Integer
 from sqlalchemy import String
+from sqlalchemy import Text
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import object_session
 from sqlalchemy.orm import relationship
@@ -28,7 +29,14 @@ class ItemAuthorInstitution(Base, Str):
 
     fk_authors = Column(Integer, ForeignKey("authors.pk_authors"))
     fk_items = Column(Integer, ForeignKey("items.pk_items"))
-    # fk_institutions = Column(Integer, ForeignKey("institutions.pk_institutions"))
+
+
+class Abstract(Base, Str):
+    __tablename__ = "abstracts"
+
+    pk_abstracts = Column(Integer, primary_key=True)
+    fk_items = Column(Integer, ForeignKey("items.pk_items"), index=True)
+    text = Column(Text)
 
 
 class Author(Base, Str):
