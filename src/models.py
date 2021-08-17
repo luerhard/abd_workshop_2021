@@ -97,3 +97,17 @@ class Item(Base, Str):
         secondary=ItemAuthorInstitution.__table__,
         back_populates="items",
     )
+
+    source = relationship("Source", back_populates="items", uselist=False)
+
+
+class Source(Base, Str):
+    __tablename__ = "sources"
+
+    pk_sources = Column(Integer, primary_key=True)
+    sourcetitle = Column(String)
+    canonical_sourcetitle = Column(String)
+    pubtype = Column(String)
+    issn = Column(String)
+
+    items = relationship("Item", back_populates="source")
