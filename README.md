@@ -16,8 +16,8 @@ Dieses installiert ein conda environment mit dem Namen `abd_workshop_2021`.
 ## Zugang zu den Beispieldaten für diesen Workshop
 
 Die Daten, die im Verlauf dieses Workshops verwendet werden, können [hier](https://bwsyncandshare.kit.edu/s/jamD6Z3R82F8Tt6) heruntergeladen werden.
-Die wir eine unterschriebene Datenschutzerklärung benötigen, um diese Daten zu teilen, ist dieser Ordner passwortgeschützt.
-Um das Passwort zu erhalten, unterschreiben Sie bitte die Datenschutzerklärung, die Sie per Mail erhalten haben und senden diese an Said Unger.
+Da wir eine unterschriebene Datenschutzerklärung benötigen, um diese Daten zu teilen, ist dieser Ordner passwortgeschützt.
+Um das Passwort zu erhalten, unterschreiben Sie bitte die Datenschutzerklärung, die Sie per Mail erhalten haben und senden diese an Saïd Unger.
 
 Nach Erhalt der Daten, entpacken Sie diese bitte in den `data/` Ordner des Repos.
 
