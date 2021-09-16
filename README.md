@@ -27,9 +27,10 @@ Falls Sie einen Zugang zur Datenbank des Kompentenzzentrum Bibliometrie haben, f
 
 Die Python-Libraries, die dazu notwendig sind, werden mit dem conda-environment mitinstalliert -- dennoch ist der Oracle Libraries nötig (z.B. im [Oracle Instant Client](https://www.oracle.com/database/technologies/instant-client.html) enthalten), damit die Verbindung funkioniert. Installationsanweisungen für alle gängigen Plattformen finden sie [in der Dokumentation](https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html). Für Windows-Nutzer gibt es [hier einen Stackoverflow Artikel](https://stackoverflow.com/questions/56119490/cx-oracle-error-dpi-1047-cannot-locate-a-64-bit-oracle-client-library) mit Tipps zur Installation.
 
+Während aller Abfragen an die KB-Datenbank muss ebenfalls der VPN-Tunnel des KB aktiv sein. Installationsanweisungen hierzu finden Sie (nach dem Einloggen mit Ihren KB Credentials [auf der Webseite des KB](https://partners.fiz-karlsruhe.de/wiki/pages/viewpage.action?spaceKey=KB&title=Zugang+zu+Bibliometrie-Systemen+und+Datenbanken). Für Windows wird dazu der Pulse-Client benötigt, für Linux besteht zusätzlich die Möglichkeit der Einrichtung im NetworkManager. Hilfreiche Hinweise dazu stehen in den Kommentaren am Ende der Seite).
+
 Um eine Verbindung zur Datenbank aufzubauen, muss eine Datei mit dem Namen `config.ini` erstellt werden, in der die persönlichen Zugangsdaten zur Datenbank enthalten sind.
 Diese Datei muss nach dem Schema in `config[EXAMPLE].ini` aufgebaut sein und im selben Ordner liegen.
-
 Man kann diese Datei kopieren und im Inhalt `mypassword` und `myusername` durch den entsprechenden Zugang ersetzen.
 
 ```
